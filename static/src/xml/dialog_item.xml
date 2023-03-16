@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <div t-name="ms_login_as.loginDialog" t-att-style="style" owl="1">
+        <div>
+            <select id="loginDialogProject_id" name="project_id" class="form-control link-style project_id">
+                <option value="-1"/>
+                <t t-foreach="users" t-as="u" t-key="id">
+                    <option t-esc="u.name" t-att-value="u.id"/>
+                </t>
+            </select>
+        </div>
+    </div>
+
+    <div t-name="ms_login_as.loginDialogFooter" t-att-style="style" owl="1">
+        <div>
+            <button class="btn btn-primary" t-on-click="loginAsUser" t-esc="buttonMessage"/>
+            <button class="btn" t-on-click="close">Cancel</button>
+        </div>
+    </div>
+
+</templates>
